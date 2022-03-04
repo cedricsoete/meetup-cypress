@@ -42,9 +42,10 @@ const TodoDetails = ({ todo }: TodoDetailsProps) => {
   const hide = editing ? classes.hide : "";
 
   return (
-    <div className={`${classes.todo_item} ${todo_completed} ${todo_editing}`}>
+    <div data-cy="todo-detail" data-complete={todo.complete} className={`${classes.todo_item} ${todo_completed} ${todo_editing}`}>
       <div className={classes.cell}>
         <button
+          data-cy="checked"
           className={`${classes.icon} ${classes.checkIcon} ${hide}`}
           onClick={checkTodoHandler.bind(null, todo.id)}
         >
@@ -52,7 +53,7 @@ const TodoDetails = ({ todo }: TodoDetailsProps) => {
         </button>
       </div>
       <div className={classes.cell}>
-        {!editing && <div className={classes.title}>{todoText}</div>}
+        {!editing && <div data-cy="title" className={classes.title}>{todoText}</div>}
         {editing && (
           <input
             onKeyPress={onEnterPressHandler}
@@ -65,18 +66,21 @@ const TodoDetails = ({ todo }: TodoDetailsProps) => {
       </div>
       <div className={classes.cell}>
         <button
+          data-cy="edit"
           className={`${classes.icon} ${hide}`}
           onClick={() => setEditing(true)}
         >
           <i className="fas fa-edit"></i>
         </button>
         <button
+          data-cy="delete"
           className={`${classes.icon} ${hide}`}
           onClick={removeTodoHanlder.bind(null, todo.id)}
         >
           <i className="fas fa-eraser"></i>
         </button>
         <button
+          data-cy="save"
           className={`${classes.icon} ${!editing ? classes.hide : ""}`}
           onClick={saveEditTodoHandler}
         >
