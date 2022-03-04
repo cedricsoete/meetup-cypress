@@ -3,7 +3,7 @@ import TodoModel from "../models/todo";
 import { TodoContext } from "../store/store-todo";
 import classes from "./TodoDetails.module.css";
 
-interface TodoDetailsProps {
+export interface TodoDetailsProps {
   todo: TodoModel;
 }
 const TodoDetails = ({ todo }: TodoDetailsProps) => {
@@ -56,6 +56,7 @@ const TodoDetails = ({ todo }: TodoDetailsProps) => {
         {!editing && <div data-cy="title" className={classes.title}>{todoText}</div>}
         {editing && (
           <input
+            data-cy="edit-title"
             onKeyPress={onEnterPressHandler}
             className={classes.input}
             type="text"
@@ -66,6 +67,7 @@ const TodoDetails = ({ todo }: TodoDetailsProps) => {
       </div>
       <div className={classes.cell}>
         <button
+          name="edit"
           data-cy="edit"
           className={`${classes.icon} ${hide}`}
           onClick={() => setEditing(true)}

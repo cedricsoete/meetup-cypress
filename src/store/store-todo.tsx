@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import TodoList from "../components/TodoList";
+
 import {
   getTodosAPI,
   addTodosAPI,
@@ -24,12 +24,12 @@ interface TodoContextInterface {
 export const TodoContext = createContext<TodoContextInterface>({
   todoList: [],
   filter: filter.all,
-  changeFilter: (filterOrder: filter) => {},
-  getTodo: () => {},
-  addTodo: (todo: TodoModel) => {},
-  removeTodo: (id: string) => {},
-  checkTodo: (id: string) => {},
-  updateTodo: (id: string, textInput: string) => {},
+  changeFilter: (filterOrder: filter) => { },
+  getTodo: () => { },
+  addTodo: (todo: TodoModel) => { },
+  removeTodo: (id: string) => { },
+  checkTodo: (id: string) => { },
+  updateTodo: (id: string, textInput: string) => { },
 });
 
 const TodoContextProvider: React.FC = (props) => {

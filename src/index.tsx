@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import TodoContextProvider from "./store/store-todo";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 ReactDOM.render(
   <React.StrictMode>
     <TodoContextProvider>

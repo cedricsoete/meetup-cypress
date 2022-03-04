@@ -53,7 +53,7 @@ export const editTodoAPI = async (code: string, updateText: string) => {
     if (!response.ok) {
       throw new Error("Updating Todo Fail");
     }
-    const data = await response.json();
+    await response.json();
 
     console.log(response);
   } catch (error) {
