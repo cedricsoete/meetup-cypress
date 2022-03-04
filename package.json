@@ -42,8 +42,14 @@
     ]
   },
   "devDependencies": {
+    "@cucumber/cucumber": "7.3.2",
+    "@cypress/browserify-preprocessor": "3.0.2",
     "@cypress/react": "5.12.3",
     "@cypress/webpack-dev-server": "1.8.1",
-    "cypress": "9.5.1"
+    "cypress": "9.5.1",
+    "cypress-cucumber-preprocessor": "4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }

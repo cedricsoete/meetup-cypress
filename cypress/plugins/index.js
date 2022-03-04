@@ -13,12 +13,17 @@
 // the project's config changing)
 
 const injectDevServer = require("@cypress/react/plugins/react-scripts")
-
+const cucumber = require('cypress-cucumber-preprocessor').default
+const browserify = require("@cypress/browserify-preprocessor");
 /**
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   injectDevServer(on, config)
+  on('file:preprocessor', cucumber({
+    ...browserify.defaultOptions,
+    typescript: require.resolve("typescript"),
+  }))
   return config
 }

@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
+  "ignoreTestFiles": "*.step.ts",
   "component": {
     "testFiles": "**/*.spec-cy.js",
     "componentFolder": "src"
