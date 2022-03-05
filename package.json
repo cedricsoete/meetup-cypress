@@ -23,7 +23,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
-    "cypress:open-ct": "cypress open-ct"
+    "cypress:open-ct": "cypress open-ct",
+    "cypress:run-ct": "cypress run-ct --reporter list",
+    "precypress:run": "rm -rf cypress/results && rm -rf mochawesome-report && rm -rf mochawesome.json",
+    "cypress:run": "cypress run",
+    "postcypress:run": "mochawesome-merge 'cypress/results/*.json' > mochawesome.json & marge ./mochawesome.json"
   },
   "eslintConfig": {
     "extends": [
@@ -49,7 +53,10 @@
     "@cypress/react": "5.12.3",
     "@cypress/webpack-dev-server": "1.8.1",
     "cypress": "9.5.1",
-    "cypress-cucumber-preprocessor": "4.3.1"
+    "cypress-cucumber-preprocessor": "4.3.1",
+    "mochawesome": "7.1.1",
+    "mochawesome-merge": "4.2.1",
+    "mochawesome-report-generator": "6.1.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
