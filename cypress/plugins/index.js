@@ -15,6 +15,7 @@
 const injectDevServer = require("@cypress/react/plugins/react-scripts")
 const cucumber = require('cypress-cucumber-preprocessor').default
 const browserify = require("@cypress/browserify-preprocessor");
+const corerage = require('@cypress/code-coverage/task')
 /**
  * @type {Cypress.PluginConfig}
  */
@@ -25,5 +26,6 @@ module.exports = (on, config) => {
     ...browserify.defaultOptions,
     typescript: require.resolve("typescript"),
   }))
+  corerage(on, config)
   return config
 }

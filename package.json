@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:coverage": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -50,6 +51,8 @@
   "devDependencies": {
     "@cucumber/cucumber": "7.3.2",
     "@cypress/browserify-preprocessor": "3.0.2",
+    "@cypress/code-coverage": "3.9.12",
+    "@cypress/instrument-cra": "1.4.0",
     "@cypress/react": "5.12.3",
     "@cypress/webpack-dev-server": "1.8.1",
     "cypress": "9.5.1",

@@ -27,3 +27,4 @@ cypress/screenshots
 cypress/results
 mochawesome-report
 mochawesome.json
+.nyc_output
